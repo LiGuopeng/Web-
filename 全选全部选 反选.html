@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  <input type="checkbox" value="全选" id="ok_btn">全选
+    <input type="checkbox" value="不选" id="no_btn">全不选
+    <input type="checkbox" value="反选" id="rev_btn">反选
+    <hr />
+    <div id="obox">   
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+    </div>
+</body>
+<script>
+window.onload=function(){
+               var oc=document.getElementById("ok_btn");
+               var oc1=document.getElementById("no_btn");
+               var oc2=document.getElementById("rev_btn");
+               var obox=document.getElementById("obox");
+              var ainput= obox.getElementsByTagName('input');
+              oc.onclick=function(){
+             if(oc.checked==true){
+            for(var i=0;i<ainput.length;i++){
+                ainput[i].checked=true;
+            }
+         }else{
+            for(var i=0;i<ainput.length;i++){
+                ainput[i].checked=false;
+            }
+         }
+        };
+
+       oc1.onclick=function(){
+             if(oc1.checked==true){
+            for(var i=0;i<ainput.length;i++){
+                ainput[i].checked=false;
+            }
+         }
+        };
+
+
+       oc2.onclick=function(){
+        for(var i=0;i<ainput.length;i++){
+                 if(ainput[i].checked==true){
+                    ainput[i].checked=false;
+                        }else{
+                            ainput[i].checked=true;                    
+                         }
+            }
+
+}
+
+
+
+}
+
+
+
+</script>
+</html>
