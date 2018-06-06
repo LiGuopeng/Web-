@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取属性值</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: aqua;
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+  <div id="get"></div>
+</body>
+<script>
+    window.onload=function () {
+        var get=document.getElementById("get");
+        get.onclick=function () {
+            if(get.currentStyle){
+                alert(get.currentStyle.width)
+            }else{
+                alert(getComputedStyle(get,false).width)
+
+            }
+        }
+    }
+
+
+    
+</script>
+</html>

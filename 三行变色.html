@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table id="table" border="1" width="500px">
+    <tr><td>1</td></tr>
+    <tr><td>2</td></tr>
+    <tr><td>3</td></tr>
+    <tr><td>4</td></tr>
+    <tr><td>5</td></tr>
+    <tr><td>6</td></tr>
+    <tr><td>7</td></tr>
+    <tr><td>8</td></tr>
+    <tr><td>9</td></tr>
+    <tr><td>10</td></tr>
+    <tr><td>11</td></tr>
+    <tr><td>12</td></tr>
+    <tr><td>13</td></tr>
+    <tr><td>14</td></tr>
+    <tr><td>15</td></tr>
+    <tr><td>16</td></tr>
+    <tr><td>17</td></tr>
+</table>
+</body>
+<script>
+    window.onload=function() {
+        var tbl = document.getElementById("table"); // 先获取table
+        var rows = tbl.getElementsByTagName("tr"); // 获取里面的行tr
+        for(i=0;i<rows.length;i++) {  // 遍历里面的行
+            var j = parseInt(i/3); // 以每3行为单位,j为：3次0，3次1，3次2 ...
+            if(j%2==0){ // 再通过取模来设置每隔3行显示不同的两种颜色
+                rows[i].style.backgroundColor="#f00";
+            }else{
+                rows[i].style.backgroundColor="#0f0";
+            }
+        }
+    };
+
+
+</script>
+</html>
