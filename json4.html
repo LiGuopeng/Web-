@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>josn</title>
+</head>
+<body>
+
+</body>
+<script>
+   /*  var  josn={show:function () {
+             alert(1)
+         }};
+       josn.show();
+
+
+       var josn1={show:{
+           a:1
+           }}
+           alert(josn1.show.a)
+
+       var  josn2={a:[1,2,3],show:function () {
+               alert(josn2.a[0]+josn2.a[1]);
+               return josn2.a[2]
+           }}
+           alert(josn2.show()+josn2.a[0])*/
+
+     var json={age:[1,2,3],show:function (a) {
+             alert(a);
+             return a+json.age[1]
+         }}
+         alert(json.show(json.age[0])+5)
+
+</script>
+</html>

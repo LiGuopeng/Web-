@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>josn_url</title>
+</head>
+<body>
+
+</body>
+<script>
+    //Url形式   a=1&b=1
+    //json>>Url   转化数组
+   /* function jsonUrl(json) {
+             var arr=[];
+             for(var i in json){
+                 arr.push(i+"="+json[i]);
+             }
+          return  arr.join("&");
+      }
+    var json ={name:"葫芦娃",age:1000,job:"等着被顿"};
+    var url=jsonUrl(json);
+    document.write(url)*/
+
+
+
+    var json ={name:"葫芦娃",age:1000,job:"等着被顿"};
+    var arr=[];
+    for(var i in json){
+        arr.push(i+"="+json[i]);
+    }
+    arr.join("&");
+    alert(arr.join("&"));
+</script>
+</html>

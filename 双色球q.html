@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var a = [];
+    var flag = false;
+    function findInArr(arr) {
+        console.log(arr);
+        if (arr.length != 0) {
+            for (var i = 0; i < arr.length; i++) {
+                if (n == arr[i]){
+                    flag =  true;
+                    break
+                }else
+                    flag = false;
+            }
+        }else {
+            flag = false;
+        }
+        return flag;
+    }
+    for (var i = 0; i > -1; i++){
+        if(a.length == 6){
+            break;
+        }
+        var n  = parseInt(Math.random() * 31 + 1);
+        if (!findInArr(a)){
+            var b = a.push(n);
+            console.log(b)
+        }
+    }
+    document.write(a);
+</script>
+</html>

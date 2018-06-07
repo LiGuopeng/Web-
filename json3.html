@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>josn</title>
+</head>
+<body>
+
+</body>
+<script>
+     function show(a) {
+         return{
+             plus:function (b) {
+                 return{
+                     sum:function (c) {
+                         alert(a+b+c)
+                     }
+                 }
+             }
+
+         }
+     }
+   show(2).plus(3).sum(4);
+
+</script>
+</html>

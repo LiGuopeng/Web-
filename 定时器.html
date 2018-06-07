@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器</title>
+    <style>
+        img{
+            position: absolute;
+            top: 500px;
+            left: 500px;
+
+        }
+
+    </style>
+</head>
+<body>
+  <img src="img/01.png">
+</body>
+<script>
+        window.onload=function () {
+          var  oimg=document.getElementsByTagName('img')[0];
+            var f=null;
+            var ti=null;
+           function f1() {
+               var count=0;
+               f=setInterval(function () {
+                   count++;
+                   oimg.src=`img/0${count%3+1}.png`;
+               },150)
+           }
+           f1();
+                 oimg.onclick=function () {
+                     var count1=0;
+                     //循环   用   先关闭周期定时器
+                     clearInterval(f);
+                     clearInterval(ti);
+                     ti=setInterval(function () {
+                         oimg.src=`img/fight0${count1%4+1}.png`;
+                         count1++;
+                         if(count1==8){
+                             clearInterval(ti);
+                             f1();
+                         }
+                     },1000);
+                 }
+        }
+
+
+</script>
+</html>

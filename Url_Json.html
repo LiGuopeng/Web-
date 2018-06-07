@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Url_Json</title>
+</head>
+<body>
+
+</body>
+<script>
+    //Url形式   a=1&b=1
+    // {a:1,b:"年后",c:3}
+      var str="a=1&b='年后'&c=3";
+      var  arr=str.split("&");
+      alert(arr);
+      var  json={};
+      for(var i=0; i<arr.length;i++){
+       var arr2=arr[i].split("=");
+         json[arr2[0]]=arr2[1]
+       }
+        console.log(json);
+
+
+</script>
+</html>

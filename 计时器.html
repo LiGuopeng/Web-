@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<span></span>
+</body>
+<script>
+            window.onload=function () {
+                var ospan=  document.getElementsByTagName('span')[0];
+                var Ttime=new Date();
+                //设置月数-1    获取+1
+                Ttime.setFullYear(2018,7,30);
+                Ttime.setHours(0,0,0,0);
+                var  Ttime1=Ttime.getTime();
+                function f() {
+                    var Ntime =new Date();
+                    var Notime=Ntime.getTime();
+                    var TNS=parseInt((Ttime1-Notime)/1000);
+                    var  T=parseInt(TNS/86400);
+                    TNS%=86400;
+                    var h=parseInt(TNS/3600);
+                    TNS%=3600;
+                    var m=parseInt(TNS/60);
+                    TNS%=60;
+                    ospan.innerHTML=`${T}天${h}时：${m}分：${TNS}秒`;
+                }
+                f();
+                setInterval(f,1000);
+            }
+
+
+
+</script>
+</html>
