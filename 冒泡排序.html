@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>前排插叙</title>
+</head>
+<body>
+</body>
+<script>
+   function   findInMin(arr,index){
+         var iMin=arr[index];//假如最小值
+         var iMinIndex=index;//假如最小值得位置
+         for(var i=index+1;i<arr.length;i++){
+             if(iMin>arr[i]){
+                 iMin=arr[i];
+                 iMinIndex=i;
+             }
+         }
+         return    iMinIndex;
+     }
+
+
+ var  arr=[4,2,4,445,2312,4545,87,5,11,12];
+    for (var i=0;i<arr.length;i++){
+        var  index=findInMin(arr,i);////index假如是最小的index
+        var tmp;
+        tmp=arr[index];
+        arr[index]=arr[i];
+        arr[i]=tmp;
+    }
+  document.write(arr);
+
+   
+     
+
+/* var  arr=[4,2,4,445,2312,4545,87,5,11,12];
+  for (var i=0;i<arr.length;i++){
+        for(var j=i+1;j<arr.length;j++){
+            if(arr[i]>arr[j]){
+                var  temp=0;
+                temp=arr[i];  
+                arr[i]=arr[j];
+                arr[j]=temp;
+            }
+        }
+    }
+    document.write(arr);*/
+</script>
+</html>

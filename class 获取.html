@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class获取元素</title>
+    <script src="class.js"></script>
+    <style>
+        .red{
+            background: #000000;
+        }
+    </style>
+</head>
+<body>
+<ul id="oul">
+    <li class="red hehe">111</li>
+    <li class="haha gagake">222</li>
+    <li class="red">333</li>
+    <li class="red">444</li>
+    <li class="red">555</li>
+    <li class="red2"></li>
+</ul>
+</body>
+<script>
+    window.onload=function () {
+        var oUl=document.getElementById('oul');
+        var aRed=getByClass(oUl,'red');
+        for(var i=0;i<aRed.length;i++){
+            aRed[i].style.background='green';
+        }
+    }
+
+
+</script>
+</html>

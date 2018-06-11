@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+      var  oString="asdasdasdsrersdasdasdasdasdasdvcbvcbbbqqqqqqqqqqqqqq";
+      var arr=oString.split('');
+      // a s s f
+      var json={};
+      for (var i=0;i<arr.length;i++) {
+          console.log(arr[i]);
+        if (json[arr[i]]){
+            json[arr[i]]++;
+        } else {
+            json[arr[i]]=1;
+        }
+    }
+         console.log(json);
+      //{ a: 8, s: 10, d: 9, r: 2, e: 1, v: 2, c: 2, b: 4, q: 14 }
+      var arr2=[];
+       for(var i in json){
+           arr2.push({code:i,count:json[i]})
+       }
+    console.log(arr2);  //[{},{}]
+    /*0: Object { code: "a", count: 8 }
+      1: Object { code: "s", count: 10}
+      2: Object { code: "d", count: 9 }
+      3: Object { code: "r", count: 2 }
+      4: Object { code: "e", count: 1 }
+      5: Object { code: "v", count: 2 }
+      6: Object { code: "c", count: 2 }
+      7: Object { code: "b", count: 4 }
+      8: Object { code: "q", count: 14 }*/
+       arr2.sort(function (n1,n2) {
+           return  n2-n1;
+       })
+  document.write(arr2[0].code +" "+arr2[0].count);
+
+
+
+</script>
+</html>

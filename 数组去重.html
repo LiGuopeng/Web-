@@ -8,46 +8,19 @@
 
 </body>
 <script>
-    /**利用ES6的set    Set数据结构，它类似于数组，其成员的值都是唯一的。(利用Array.from将Set结构转换成数组)
-     var aa=[1,1,2,3,2];
-     function  dedupe(bb){
-             return Array.from(new Set(bb))
+   //json的特性 唯一  key是唯一的
+    var arr=[12,12,12,23,23,34,4,5];
+      var json={};
+      for(var i=0;i<arr.length;i++){
+          json[arr[i]]=1;
+      }
+    console.log(json);//Object { 4: 1, 5: 1, 12: 1, 23: 1, 34: 1 }
+    var arr2=[];
+     for(var i in json){
+         arr2.push(i);
      }
-      alert(dedupe(aa));/
+    document.write(arr2);
 
 
-    /*遍历嵌套循环      splice删除
-    var arr = [1,2,3,4,5,5,5,5,1,1,2,2,3,4,5,6,7,5,3];
-     function f(arr1) {
-         //es6中引入扩展运算符（...），它用于把一个数组转化为用逗号分隔的参数序列，
-         // 它常用在不定参数个数时的函数调用，数组合并等情形
-            let newarr = [...arr1];
-            for (var i = 0; i < newarr.length; i++) {
-                for (var j = i + 1; j < newarr.length; j++) {
-                    if (newarr[i] ===newarr[j]) {
-                        newarr.splice(j, 1);
-                        j--;
-                    }
-                }
-            }
-            return newarr;
-    }
-   alert(f(arr));*/
-
-    /*新建一个空数组，循环数组每一项，用空数组的indexOf方法检验每一项，
-    如果不存在将其推入数组，循环完成后，返回新数组。
-    push   增加      indexOf判断是否存在
-    */
-    var arr = [1,2,3,4,5,5,5,5,1,1,2,2,3,4,5,6,7,5,3];
-         function  filterarr(arr) {
-               let newarr=[];
-               for (var i=0;i<arr.length;i++){
-           if(newarr.indexOf(arr[i])===-1){
-               newarr.push(arr[i])
-           }
-               }
-               return  newarr;
-         }
-          alert(filterarr(arr))
 </script>
 </html>

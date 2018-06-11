@@ -9,7 +9,8 @@
 <script>
     var arr=[1,2,4,3,4,4,4,58,4,9];
     /*join(seoarator) 将数组的元素组起一个字符串，以separator为分隔符，省略的话则用默认用逗号为分隔符，该方法只接收一个参数：即分隔符。*/
-    //alert(arr.join()        alert(arr.join("-"))
+   /*  alert(arr.join() );     
+    alert(arr.join("-"))*/
     /*通过join()方法可以实现重复字符串，只需传入字符串以及重复的次数，就能返回重复后的字符串
         function replace(str, n) {
             //一个长度为n+1的空数组用string去拼接成字符串，不就成了n个string的重复了么
@@ -21,23 +22,23 @@
     /*push()和pop()
     * push(): 可以接收任意数量的参数，把它们逐个添加到数组末尾，并返回修改后数组的长度。
     *数组末尾移除最后一项，减少数组的 length 值，然后返回移除的项。
-    *
+ 
     var count = arr.push("Jack","Sean");
         console.log(arr);
     var count1 = arr.pop();
     console.log(count1);
-    console.log(arr);
-    */
+    console.log(arr);   
+    
 
 
      /*shift() 和 unshift()
      shift()：删除原数组第一项，并返回删除元素的值；如果数组为空则返回undefined 。
-      *unshift:将参数添加到原数组开头，并返回数组的长度 。
+      unshift:将参数添加到原数组开头，并返回数组的长度 
          var dhead=arr.shift();
          console.log(dhead);
        var dhead=arr.unshift("你好");
          console.log(dhead);
-         console.log(arr);*/
+         console.log(arr);。*/
 
       /*sort()排序
        console.log(arr.sort());
@@ -59,9 +60,9 @@
 
 
 
-    /*reverse()：反转数组项的顺序。 原数组改变
+    /*reverse()：反转数组项的顺序。 原数组改变*/
     console.log(arr.reverse());
-    console.log(arr);*/
+    console.log(arr);
 
 
     /*concat() ：将参数添加到原数组中。这个方法会先创建当前数组一个副本
@@ -172,9 +173,9 @@
       这个函数返回的任何值都会作为第一个参数自动传给下一项。第一次迭代发生在数组的第二项上，因此第一个参数是数组的第一项，
      第二个参数就是数组的第二项。
       var sum = arr.reduceRight(function(prev, cur, index, array){
-        return prev + cur;},10);
-         console.log(sum);
-         */
+        return prev},10);
+         console.log(sum);*/
+        
 
 
 </script>

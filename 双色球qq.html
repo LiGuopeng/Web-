@@ -5,15 +5,14 @@
     <title>双色球</title>
 </head>
 <body>
-
 </body>
 <script>
       function f(n,m) {
-          return parseInt(n+Math.round()*(m-n));
+          return parseInt(n+Math.random()*(m-n));
       }
        function findInArr(arr,num1) {
-               for (var i=0;arr.length;i++){
-              if(arr[i]=num1){
+               for (var i=0;i<arr.length;i++){
+              if(arr[i]==num1){
                   return true;
                }
                }
@@ -27,7 +26,8 @@
                        arr.push(num);
                    }
              }
-              console.log(arr);
+              document.write(arr);
    }
+        
 </script>
 </html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <ul id="aaa">
+      <li class="red">22</li>
+      <li class="red">2123</li>
+      <li class="red1">dsdfds</li>
+      <li class="red">123123123</li>
+      <li class="red">12312312</li>
+      <li class="red">3123123</li>
+
+  </ul>
+</body>
+<script>
+    /*不兼容
+    window.onload=function () {
+        var oUl=document.getElementById('oul');
+        var aRed=oUl.getElementsByClassName('red');
+        for(var i=0;i<aRed.length;i++){
+            aRed[i].style.background='red';
+        }*/
+       //兼容
+          function getClassName(obj,sClass) {
+           var d=[];
+          var li=obj.getElementsByTagName("*");
+             for(var i=0;i<li.length;i++){
+             if(li[i].className==sClass){
+                   d.push(li[i]);
+             }
+             }
+             return d;
+       }
+          var aaa= document.getElementById("aaa");
+            var red=getClassName(aaa,'red');
+           console.log(red);//Array(6) [ li.red, li.red, li.red, li.red, li.red, li.red ]
+            for (var i=0; i<red.length;i++){
+            red[i].style.background="green";
+            }
+
+
+</script>
+</html>

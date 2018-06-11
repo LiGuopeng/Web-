@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>排序</title>
+</head>
+<body>
+
+</body>
+<script>
+   /* var arr=['b','a','o','r'];
+    arr.sort()
+    document.write(arr)*/
+    var arr=[12,2,3,100];
+   /*arr.sort(function (n1,n2) {
+       if(n1>n2){
+           return    0.0000001  //正数
+       }else if(n1<n2){
+           return   -0.000001 //负数
+       }else{
+           return 0
+       }
+   })*/
+   arr.sort(function (n,m) {
+       return n-m;
+   })
+    document.write(arr)
+
+</script>
+</html>
