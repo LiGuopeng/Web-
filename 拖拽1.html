@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            list-style-type: none;
+        }
+        #obox{
+            top: 0px;
+            left: 0px;
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: bisque;
+        }
+    </style>
+</head>
+<body style="width:1500px;height:1500px">
+<div id="obox"></div>
+
+</body>
+<script>
+      window.onload=function () {
+           let obox=document.querySelector("#obox");
+           obox.onmousedown=function (ev) {
+              let oEvent=ev||Event;//代表事件的状态，如键盘按键的位置，鼠标的位置，鼠标按钮的状态
+               //获取当前页面滚动条纵坐标位置
+                let top=document.documentElement.scrollTop||document.body.scrollTop;
+               //获取当前页面滚动条横坐标位置
+                let left=document.documentElement.scrollLeft||document.body.scrollLeft;
+
+
+                //获取鼠标点击时纵坐标的位置(相对于自己的div)
+                let topp=oEvent.clientY+top-obox.offsetTop;
+                console.log(topp)
+               //obox.offsetLeft 左边框到浏览器的距离  oEvent.clientX 显示鼠标指针的坐标
+               //获取鼠标点击时横坐标的位置
+                let leftt=oEvent.clientX+left-obox.offsetLeft;
+               console.log(leftt)
+
+
+                document.onmousemove=function (ev) {
+                    let oEvent=ev||Event;
+                    //获取当前页面滚动条纵坐标位置
+                    let top=document.documentElement.scrollTop||document.body.scrollTop;
+                    //获取当前页面滚动条横坐标位置
+                    let left=document.documentElement.scrollLeft||document.body.scrollLeft;
+
+                    // oEvent.clientX 显示鼠标指针的坐标
+                    let offsettop=oEvent.clientY+top-topp;
+
+                    let offsetleft=oEvent.clientX+left-leftt;
+
+
+
+                    if(offsettop<0){
+                        offsettop=0;
+                    }else if(offsettop>document.documentElement.clientHeight+top-obox.offsetHeight){
+                        offsettop=document.documentElement.clientHeight+top-obox.offsetHeight;
+
+                    }
+                      if(offsetleft<0){
+                         offsetleft=0
+                      }else if(offsetleft>document.documentElement.clientWidth+left-obox.offsetWidth){
+                          offsetleft=document.documentElement.clientWidth+left-obox.offsetWidth;
+
+                    }
+                    obox.style.left=offsetleft+'px';
+                    obox.style.top=offsettop+'px';
+                    document.onmouseup=function () {
+                        document.onmousemove=null;
+                        document.onmouseup=null;
+                    }
+                }
+           }
+      }
+
+</script>
+</html>

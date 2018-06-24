@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .x{
+            width: 400px;
+            height: 400px;
+            background: red;
+        }
+        .y{
+            width: 300px;
+            height: 300px;
+            background: antiquewhite;
+        }
+        .z{
+            width: 200px;
+            height: 200px;
+            background: aqua;
+        }
+
+    </style>
+</head>
+<body>
+<div class="x">
+    <div class="y">
+        <div class="z">
+        </div>
+
+    </div>
+</div>
+</body>
+<script>
+    window.onload=function () {
+        let x=document.querySelector(".x");
+        let y=document.querySelector(".y");
+        let z=document.querySelector(".z");
+        document.onclick=function(){
+            alert(141);
+        }
+         x.onclick=function(){
+          alert(18);
+
+        }
+        y.onclick=function (ev) {
+            oEvent=ev||event;
+            oEvent.cancelable=true;//阻止事件冒泡
+            oEvent.cancelBubble
+           alert(asdas)
+
+        }
+           z.onclick=function () {
+            alert(6565)
+
+        }
+
+    }
+</script>
+</html>

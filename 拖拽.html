@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            list-style-type: none;
+        }
+           #obox{
+               top: 0px;
+               left: 0px;
+               position: absolute;
+               width: 200px;
+               height: 200px;
+               background: bisque;
+           }
+
+    </style>
+</head>
+<body style="width: 3000px;height:3000px">
+<div id="obox"></div>
+
+</body>
+<script>
+    window.onload = function () {
+        let oBox = document.querySelector('#obox');
+        let disX = null;
+        let disY = null;
+        oBox.onmousedown = function (ev) {
+            let oEvent = ev || event;
+            let scoT = document.documentElement.scrollTop || document.body.scrollTop;
+            let scoL = document.documentElement.scrollLeft || document.body.scrollLeft;
+            disX = oEvent.clientX - oBox.offsetLeft + scoL;
+            disY = oEvent.clientY - oBox.offsetTop + scoT;
+            document.onmousemove=function(ev){
+                let oEvent=ev||event;
+                console.log(oEvent)
+                let scoT = document.documentElement.scrollTop || document.body.scrollTop;
+                let scoL = document.documentElement.scrollLeft || document.body.scrollLeft;
+                let l=oEvent.clientX-disX+scoL;
+                let t=oEvent.clientY-disY+scoT;
+                if(l<0){
+                    l=0;
+                }else if(l>document.documentElement.clientWidth-oBox.offsetWidth+scoL){
+                    l=document.documentElement.clientWidth-oBox.offsetWidth+scoL
+                }
+                if(t<0){
+                    t=0;
+                }else if(t>document.documentElement.clientHeight-oBox.offsetHeight+scoT){
+                    t=document.documentElement.clientHeight-oBox.offsetHeight+scoT
+                }
+                oBox.style.left=l+'px';
+                oBox.style.top=t+'px';
+            }
+            document.onmouseup=function(){
+                document.onmousemove=null;
+                document.onmouseup=null;
+            }
+        }
+    }
+
+
+
+
+</script>
+</html>
