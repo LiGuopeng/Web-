@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- dom事件必须绑定才能用 -->
+</body>
+<script>
+    window.onload=function(){
+        alert('window.onload')
+    }
+    if(document.addEventListener){
+        document.addEventListener('DOMContentLoaded',function () {
+            alert('ready');
+        },false)//false/true 事件是否冒泡
+    }else {
+      document.attachEvent('onreadystatechange',function () {
+                if(document.readyState=='complete'){
+                    alert('ready123456')
+                }
+      })
+    }
+
+</script>
+</html>

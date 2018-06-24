@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    /*
+    * elementObject 	DOM对象（即DOM元素）。
+     eventName 	事件名称。注意，与addEventListener()不同，这里的事件名称有“ on ”，如鼠标单击事件 onclick ，鼠标双击事件 ondoubleclick ，鼠标移入事件 onmouseover，鼠标移出事件 onmouseout 等。
+       handle 	事件句柄函数，即用来处理事件的函数。*/
+     function  addEvent(element,type,handle) {
+         element.addEventListener?element.addEventListener(type,handle,false):element.attachEvent("on"+type,handle);
+     }
+
+    function remove(element,type,handle){
+        element.removeEventListener?element.removeEventListener(type,handle,false):element.detachEvent("on"+type,handle);
+    }
+      function show() {
+          alert('123');
+      }
+      function show2() {
+          alert('456');
+      }
+     addEvent(document,'click',show)
+    addEvent(document,'click',show2)
+     remove(document,'click',show2)
+</script>
+</html>

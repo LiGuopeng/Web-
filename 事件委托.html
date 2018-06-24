@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <title>Document</title>
+    <style>
+        li{
+            width: 100px;
+            height: 100px;
+            background: red;
+            float: left;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+<script>
+    window.onload=function () {
+        let aul=document.body.children[0];
+         let ali=document.getElementsByTagName('li');
+           aul.onclick=function (e) {
+             oEvent=e||event;
+             //event.srcElement 可以捕获当前事件作用的对象，如event.srcElement.tagName可以捕获活动标记名称。
+            // 注意获取的标记都以大写表示，如"TD","TR","A"等。
+                 let oTn=oEvent.srcElement || oEvent.target;
+             if(oTn.tagName!=='LI') return
+
+             oTn.style.background='blue';
+
+         };
+
+    };
+
+</script>
+</html>
